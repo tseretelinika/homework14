@@ -1,0 +1,64 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}NOVA | Cart{% endblock %}
+
+{% block content %}
+
+<section class="page-heading">
+
+    <div class="small-label">✦ YOUR COLLECTION</div>
+
+    <h1>Your <span>shopping cart.</span></h1>
+
+    <p>Everything you have selected in one place.</p>
+
+</section>
+
+<section class="cart-container">
+
+    {% if cart %}
+
+        {% for product in cart.products.all %}
+
+        <div class="cart-item">
+
+            <div class="cart-symbol">✦</div>
+
+            <div class="cart-info">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description|truncatewords:10 }}</p>
+            </div>
+
+            <h3>{{ product.price }} ₾</h3>
+
+        </div>
+
+        {% empty %}
+
+        <div class="empty-message">
+            <div class="empty-icon">🛒</div>
+            <h2>Your cart is empty.</h2>
+            <p>You haven't added any products yet.</p>
+            <a href="{% url 'products' %}" class="primary-button">
+                Explore Products →
+            </a>
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty-message">
+            <div class="empty-icon">🛒</div>
+            <h2>Your cart is empty.</h2>
+            <p>Explore our products and discover something amazing.</p>
+            <a href="{% url 'products' %}" class="primary-button">
+                Explore Products →
+            </a>
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

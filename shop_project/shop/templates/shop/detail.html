@@ -1,0 +1,44 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}NOVA | {{ product.name }}{% endblock %}
+
+{% block content %}
+
+<section class="detail-section">
+
+    <a href="{% url 'products' %}" class="back-button">
+        ← Back to products
+    </a>
+
+    <div class="detail-card">
+
+        <div class="detail-art">
+            <div class="detail-circle">✦</div>
+            <span>NOVA COLLECTION</span>
+        </div>
+
+        <div class="detail-info">
+
+            <div class="small-label">✦ PRODUCT DETAILS</div>
+
+            <h1>{{ product.name }}</h1>
+
+            <p class="detail-description">
+                {{ product.description }}
+            </p>
+
+            <div class="detail-price">
+                {{ product.price }} ₾
+            </div>
+
+            <a href="{% url 'products' %}" class="primary-button">
+                Continue Shopping →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

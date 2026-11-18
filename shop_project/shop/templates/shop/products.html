@@ -1,0 +1,58 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}NOVA | Products{% endblock %}
+
+{% block content %}
+
+<section class="page-heading">
+
+    <div class="small-label">✦ THE NOVA COLLECTION</div>
+
+    <h1>Explore our <span>products.</span></h1>
+
+    <p>Find something that matches your style.</p>
+
+</section>
+
+<section class="products-container">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        <div class="product-number">
+            PRODUCT 0{{ forloop.counter }}
+        </div>
+
+        <div class="product-symbol">✦</div>
+
+        <h2>{{ product.name }}</h2>
+
+        <p>{{ product.description|truncatewords:15 }}</p>
+
+        <div class="product-bottom">
+
+            <h3>{{ product.price }} ₾</h3>
+
+            <a href="{% url 'detail' product.id %}" class="view-button">
+                View Details →
+            </a>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-message">
+        <div class="empty-icon">✦</div>
+        <h2>No products yet.</h2>
+        <p>Products you add in the admin panel will appear here.</p>
+        <a href="/admin/" class="primary-button">Go to Admin →</a>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

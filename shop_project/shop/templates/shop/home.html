@@ -1,0 +1,92 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}NOVA | Home{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-label">
+            ✦ WELCOME TO THE FUTURE OF SHOPPING
+        </div>
+
+        <h1>
+            FIND YOUR
+            <span>PERFECT</span>
+            STYLE.
+        </h1>
+
+        <p>
+            Discover amazing products, explore new possibilities
+            and find everything you need in one place.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'products' %}" class="primary-button">
+                Explore Products →
+            </a>
+
+            <a href="#about" class="secondary-button">
+                Discover More
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <h3>100%</h3>
+                <p>Quality</p>
+            </div>
+
+            <div>
+                <h3>24/7</h3>
+                <p>Experience</p>
+            </div>
+
+            <div>
+                <h3>∞</h3>
+                <p>Possibilities</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="floating-card">
+            <div class="card-icon">✦</div>
+            <h2>NOVA</h2>
+            <p>Something extraordinary.</p>
+            <div class="card-line"></div>
+            <span>EST. 2026</span>
+        </div>
+
+        <div class="floating-dot dot-one"></div>
+        <div class="floating-dot dot-two"></div>
+        <div class="floating-dot dot-three"></div>
+    </div>
+
+</section>
+
+<section class="about-section" id="about">
+
+    <div class="section-label">WHY NOVA?</div>
+
+    <h2>More than just a store.</h2>
+
+    <p>
+        We believe shopping should be simple, exciting and enjoyable.
+        Our goal is to bring you an amazing experience with products
+        you will love.
+    </p>
+
+    <a href="{% url 'products' %}" class="primary-button">
+        Start Exploring →
+    </a>
+
+</section>
+
+{% endblock %}
